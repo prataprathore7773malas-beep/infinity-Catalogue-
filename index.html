@@ -1,125 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Granites — Exclusive Product Catalog</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Infinity Granites | Luxury Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .brand-title {
-            font-family: 'Cinzel', serif;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0f1115; }
+        .lux-font { font-family: 'Playfair Display', serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .gold-gradient { color: transparent; background: linear-gradient(to right, #d4af37, #f7ef8a); -webkit-background-clip: text; }
+        .gold-border { border-color: #d4af37; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="text-slate-200">
 
     <!-- Header Section -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <nav class="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between border-b border-white/10">
+        <div class="flex items-center gap-4">
+            <img src="logo.png" alt="Infinity Logo" class="h-12 w-12 object-contain">
             <div>
-                <h1 class="brand-title text-2xl sm:text-3xl font-bold tracking-wider text-amber-400">INFINITY GRANITES</h1>
-                <p class="text-xs tracking-widest text-slate-400 uppercase">Exclusive Stone & Surface Catalog</p>
+                <h1 class="lux-font text-3xl font-bold tracking-wide text-white">INFINITY GRANITES</h1>
+                <p class="text-xs uppercase tracking-[0.2em] text-[#d4af37]">Turn Dreams Into Reality</p>
             </div>
-            <a href="#catalog" class="hidden sm:inline-block text-xs font-semibold uppercase tracking-widest bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-amber-500/10">
-                View Collection
-            </a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Banner -->
-    <section class="relative py-16 sm:py-24 border-b border-slate-900 bg-gradient-to-b from-slate-900 to-slate-950 text-center px-4">
-        <div class="max-w-3xl mx-auto">
-            <span class="text-amber-400 text-xs font-bold tracking-widest uppercase bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">Curated Masterpieces</span>
-            <h2 class="brand-title text-4xl sm:text-6xl font-bold mt-6 mb-4 text-white">Timeless Elegance in Stone</h2>
-            <p class="text-slate-400 text-sm sm:text-base font-light max-w-xl mx-auto">Explore our premium selection of granites, finished to perfection. Premium quality delivered for your architectural and interior needs.</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <header class="mb-20 text-center">
+            <h2 class="lux-font text-5xl md:text-6xl text-white mb-6">Exquisite Stone Collection</h2>
+            <div class="w-24 h-1 bg-[#d4af37] mx-auto mb-6"></div>
+            <p class="text-slate-400 max-w-2xl mx-auto font-light">Experience the pinnacle of luxury with our curated selection of premium granites. Each piece is crafted to redefine your spaces.</p>
+        </header>
 
-    <!-- Catalog Grid Section -->
-    <main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="flex items-center justify-between mb-10">
-            <h3 class="text-xl font-bold uppercase tracking-wider text-slate-200 border-l-4 border-amber-500 pl-3">Product Price List</h3>
-            <span class="text-xs text-slate-400 tracking-wider">Pricing in ₹ / Per Foot</span>
-        </div>
-
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Products will be injected dynamically via JavaScript -->
+        <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Cards will be injected -->
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-900 bg-slate-900/50 py-12 text-center text-slate-500 text-xs">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="brand-title text-lg font-bold text-slate-300 mb-2">INFINITY GRANITES</h2>
-            <p class="tracking-wide">Quality that lasts for generations.</p>
-            <p class="mt-6 text-slate-600">&copy; 2026 Infinity Granites. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript to Render Products with Mapped Images -->
     <script>
-        const products = [
-            { id: 1, name: "Markino Black Polish", price: "52", image: "mar.jpeg" },
-            { id: 2, name: "Markino Lappatro", price: "62", image: "mark.jpeg" },
-            { id: 3, name: "Baghera Black / Brown Polish", price: "47", image: "bpp.jpeg" },
-            { id: 4, name: "Baghera Lappatro — Both Colours", price: "57", image: "bag.jpeg" },
-            { id: 5, name: "Pearl Black / Brown Polish", price: "52", image: "pea.jpeg" },
-            { id: 6, name: "Pearl Lappatro — Both Colours", price: "60", image: "pbl.jpeg" },
-            { id: 7, name: "Kotada Black Polish", price: "48", image: "kbp.jpeg" },
-            { id: 8, name: "Kotada Black Lappatro", price: "58", image: "maj.jpeg" },
-            { id: 9, name: "Fish Black", price: "55", image: "fis.jpeg" },
-            { id: 10, name: "Rajasthan Blue Dot", price: "70", image: "rbt.jpeg" },
-            { id: 11, name: "Ice White Polish", price: "50", image: "ice.jpeg" },
-            { id: 12, name: "Ice White Lappatro", price: "60", image: "ice.jpeg" },
-            { id: 13, name: "P. White Polish", price: "48", image: "pwh.jpeg" },
-            { id: 14, name: "P. White Lappatro", price: "58", image: "pwh.jpeg" },
-            { id: 15, name: "Rajasthan Z Black", price: "70", image: "raj.jpeg" },
-            { id: 16, name: "Chima Pink", price: "54", image: "chi.jpeg" },
-            { id: 17, name: "White Forest / Bijwar Polish", price: "48", image: "bij.jpeg" },
-            { id: 18, name: "White Forest Lappatro", price: "58", image: "bij.jpeg" },
-            { id: 19, name: "Paradiso Brown", price: "48", image: "par.jpeg" },
-            { id: 20, name: "Himalayan Brown", price: "50", image: "him.jpeg" },
-            { id: 21, name: "Coin Black Lappatro", price: "70", image: "coi.jpeg" },
-            { id: 22, name: "Matka Brown", price: "68", image: "mat.jpeg" },
-            { id: 23, name: "Tiger Skin", price: "45", image: "tig.jpeg" },
-            { id: 24, name: "Asian Black", price: "45", image: "asi.jpeg" },
-            { id: 25, name: "Jam Red", price: "120", image: "jam.jpeg" }
+        const data = [
+            { name: "Markino Black Polish", price: "52", img: "mar.jpeg" },
+            { name: "Markino Lappatro", price: "62", img: "mark.jpeg" },
+            { name: "Baghera Black / Brown Polish", price: "47", img: "bpp.jpeg" },
+            { name: "Baghera Lappatro", price: "57", img: "bag.jpeg" },
+            { name: "Pearl Black Polish", price: "52", img: "pea.jpeg" },
+            { name: "Pearl Black Lappatro", price: "60", img: "pbl.jpeg" },
+            { name: "Kotada Black Polish", price: "48", img: "kbp.jpeg" },
+            { name: "Kotada Black Lappatro", price: "58", img: "maj.jpeg" },
+            { name: "Fish Black", price: "55", img: "fis.jpeg" },
+            { name: "Rajasthan Blue Dot", price: "70", img: "rbt.jpeg" },
+            { name: "Ice White Polish", price: "50", img: "ice.jpeg" },
+            { name: "Ice White Lappatro", price: "60", img: "ice.jpeg" },
+            { name: "P. White Polish", price: "48", img: "pwh.jpeg" },
+            { name: "P. White Lappatro", price: "58", img: "pwh.jpeg" },
+            { name: "Rajasthan Z Black", price: "70", img: "raj.jpeg" },
+            { name: "Chima Pink", price: "54", img: "chi.jpeg" },
+            { name: "White Forest Polish", price: "48", img: "bij.jpeg" },
+            { name: "White Forest Lappatro", price: "58", img: "bij.jpeg" },
+            { name: "Paradiso Brown", price: "48", img: "par.jpeg" },
+            { name: "Himalayan Brown", price: "50", img: "him.jpeg" },
+            { name: "Coin Black Lappatro", price: "70", img: "coi.jpeg" },
+            { name: "Matka Brown", price: "68", img: "mat.jpeg" },
+            { name: "Tiger Skin", price: "45", img: "tig.jpeg" },
+            { name: "Asian Black", price: "45", img: "asi.jpeg" },
+            { name: "Jam Red", price: "120", img: "jam.jpeg" }
         ];
 
-        const gridContainer = document.getElementById('product-grid');
-
-        products.forEach(product => {
-            const card = document.createElement('div');
-            card.className = "group bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl flex flex-col justify-between";
-            
-            card.innerHTML = `
-                <div class="relative aspect-[4/3] overflow-hidden bg-slate-950">
-                    <img src="${product.image}" alt="${product.name}" 
-                         onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-md border border-slate-700 text-amber-400 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">
-                        ₹${product.price} <span class="text-[10px] text-slate-300 font-normal">/ ft</span>
+        const grid = document.getElementById('grid');
+        data.forEach(item => {
+            grid.innerHTML += `
+                <div class="glass-card group rounded-none p-4 transition-all hover:scale-[1.02] duration-500">
+                    <div class="overflow-hidden mb-6 h-80">
+                        <img src="${item.img}" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
                     </div>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500">Item #${product.id}</span>
-                        <h4 class="text-base font-semibold text-white mt-1 mb-3 group-hover:text-amber-400 transition-colors">${product.name}</h4>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                        <span class="text-xs text-slate-400">Standard Grade</span>
-                        <span class="text-xs font-medium text-amber-500 tracking-wide uppercase">In Stock</span>
+                    <h3 class="lux-font text-2xl text-white mb-2">${item.name}</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="gold-gradient font-bold text-xl">₹${item.price} <span class="text-sm font-light text-slate-500">/ sq.ft</span></span>
+                        <button class="border border-[#d4af37] text-[#d4af37] px-6 py-2 text-xs uppercase tracking-widest hover:bg-[#d4af37] hover:text-black transition-all">Select</button>
                     </div>
                 </div>
             `;
-            gridContainer.appendChild(card);
         });
     </script>
 </body>
